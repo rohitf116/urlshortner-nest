@@ -32,7 +32,7 @@ export class UrlsService {
       urlCode,
       shortUrl,
     });
-    console.log(newUrl, 'newUrl');
+
     if (!newUrl) {
       throw new HttpException(
         'Failed to create URL',
