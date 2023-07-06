@@ -32,17 +32,14 @@ export class UrlsService {
       urlCode,
       shortUrl,
     });
+    console.log(newUrl, 'newUrl');
     if (!newUrl) {
       throw new HttpException(
         'Failed to create URL',
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
-
-    return {
-      statusCode: HttpStatus.CREATED,
-      data: newUrl,
-    };
+    res.status(201).send(newUrl);
   }
 
   findAll() {
